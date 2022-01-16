@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState } from "react";
 import "./styles.css";
 
 import ReactFlow from "react-flow-renderer";
@@ -13,17 +13,15 @@ const initialElements = [
 
 export default function App() {
   const [els, setEls] = useState(initialElements);
-  const yPos = useRef(0);
-
   const addNode = useCallback(() => {
-    yPos.current += 50;
+    let body = Math.random() * 1500;
     setEls((els) => {
       return [
         ...els,
         {
           id: Math.random(),
           position: { x: Math.random() * 1500, y: Math.random() * 500 },
-          data: { label: "Add nodes" },
+          data: { label: body },
         },
       ];
     });
