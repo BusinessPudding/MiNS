@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "react": "^17.0.2",
-    "react-flow-renderer": "^9.7.3",
-    "react-scripts": "^5.0.0"
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-flow-renderer": "8.0.0",
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
