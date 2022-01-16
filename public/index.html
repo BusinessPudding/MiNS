@@ -10,9 +10,112 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <title>React App</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   </head>
 
   <body>
+    <!-- メニューバーの実装は以下記事参考
+    https://qiita.com/DaichiSaito/items/1fcf8258e073a21c7f88 -->
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+          <a href="#" data-target="slide-out" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+        </div>
+      </nav>
+
+      <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+          <a href="#!"
+            >First Sidebar Link<i class="material-icons left">person</i></a
+          >
+        </li>
+        <li>
+          <a href="#!"
+            >Second Sidebar Link<i class="material-icons left"
+              >local_post_office</i
+            ></a
+          >
+        </li>
+
+        <li>
+          <ul class="collapsible">
+            <li>
+              <a class="collapsible-header"
+                >Accordion<i class="material-icons chevron right"
+                  >chevron_left</i
+                ></a
+              >
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Dashboard<i class="material-icons">web</i></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      >Fixed Chart<i class="material-icons">list</i></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">Grid<i class="material-icons">dashboard</i></a>
+                  </li>
+                  <li>
+                    <a href="#">Chat<i class="material-icons">chat</i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var instances = M.Sidenav.init(elems, {});
+
+        var elems = document.querySelectorAll(".collapsible");
+        var instances = M.Collapsible.init(elems, {});
+      });
+    </script>
     <div id="root"></div>
+    <style>
+      header,
+      main,
+      footer {
+        padding-left: 300px;
+      }
+
+      @media only screen and (max-width: 992px) {
+        header,
+        main,
+        footer {
+          padding-left: 0;
+        }
+      }
+
+      .sidenav .collapsible > .active .collapsible-header .chevron {
+        transform: rotate(-90deg);
+      }
+    </style>
   </body>
 </html>
