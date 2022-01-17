@@ -6,7 +6,7 @@ const initialElements = [
   {
     id: "1",
     type: "input", // input node
-    data: { label: "initial node" },
+    data: { label: body },
     position: { x: 100, y: 0 },
   },
 ];

@@ -3,7 +3,9 @@
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-flow-renderer": "8.0.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "aws-sdk": "^2.1058.0",
+    "@aws-sdk/client-dynamodb": "^3.47.0"
   },
   "scripts": {
     "start": "react-scripts start",
