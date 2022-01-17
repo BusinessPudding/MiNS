@@ -6,7 +6,7 @@ const initialElements = [
   {
     id: "1",
     type: "input", // input node
-    data: { label: "initial node" },
+    data: { label: body },
     position: { x: 100, y: 0 },
   },
 ];
@@ -19,7 +19,7 @@ export default function App() {
       return [
         ...els,
         {
-          id: Math.random(),
+          id: body,
           position: { x: Math.random() * 1500, y: Math.random() * 500 },
           data: { label: body },
         },
