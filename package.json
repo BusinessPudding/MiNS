@@ -5,7 +5,12 @@
     "react-flow-renderer": "8.0.0",
     "react-scripts": "3.4.3",
     "aws-sdk": "^2.1058.0",
-    "@aws-sdk/client-dynamodb": "^3.47.0"
+    "@aws-sdk/client-dynamodb": "^3.47.0",
+    "twitter": "^1.7.1",
+    "twitter-api-client": "^1.5.1",
+    "twitter-api-v2": "^1.9.1",
+    "dotenv": "^14.2.0",
+    "needle": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
