@@ -1,7 +1,9 @@
 // Search for Tweets within the past seven days
 // https://developer.twitter.com/en/docs/twitter-api/tweets/search/quick-start/recent-search
-
+require('dotenv').config();
 const needle = require('needle');
+
+
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
@@ -16,7 +18,7 @@ async function getRequest() {
     // specify a search query, and any additional fields that are required
     // by default, only the Tweet ID and text fields are returned
     const params = {
-        'query': "箱根",
+        'query': "箱根 -is:retweet",
         
     }
 
