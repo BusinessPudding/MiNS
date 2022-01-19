@@ -1,3 +1,6 @@
+// 参考にした記事
+// https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/GettingStarted.NodeJs.04.html#GettingStarted.NodeJs.04.Query.01
+
 var AWS = require("aws-sdk");
 
 AWS.config.loadFromPath("/root/.aws/credentials.json");
@@ -10,12 +13,12 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 var params = {
   TableName: "userdata",
-  KeyConditionExpression: "#yr = :yyyy",
+  KeyConditionExpression: "#id = :num",
   ExpressionAttributeNames: {
-    "#yr": "id",
+    "#id": "id",
   },
   ExpressionAttributeValues: {
-    ":yyyy": "001",
+    ":num": "001",
   },
 };
 
