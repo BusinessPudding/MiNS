@@ -49,7 +49,9 @@ async function getRequest() {
         });
 
     } catch (e) {
-        console.log(e);
+        // console.log(e);
+	const str2 = JSON.stringify(e);
+	console.log(str2)
         process.exit(-1);
         ;
     }
