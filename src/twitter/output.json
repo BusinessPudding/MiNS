@@ -1,0 +1,14 @@
+{
+ "Item": [
+  {
+   "category": "test",
+   "username": "honahuku",
+   "data": {
+    "body": "現在時刻",
+    "tweet": "tweet",
+    "user": "test_user2"
+   },
+   "userid": "userid"
+  }
+ ]
+}

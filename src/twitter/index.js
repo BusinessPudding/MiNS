@@ -17,8 +17,9 @@ async function getRequest() {
     // Edit query parameters below
     // specify a search query, and any additional fields that are required
     // by default, only the Tweet ID and text fields are returned
+    
     const params = {
-        'query': "箱根 -is:retweet",
+        'query': "箱根 -is:retweet OR 温泉 -is:retweet OR 旅館 -is:retweet"
         
     }
 
@@ -41,13 +42,23 @@ async function getRequest() {
     try {
         // Make request
         const response = await getRequest();
+        
         console.dir(response, {
+            
             depth: null
         });
 
     } catch (e) {
         console.log(e);
         process.exit(-1);
+        ;
     }
     process.exit();
 })();
+
+
+
+
+
+
+
