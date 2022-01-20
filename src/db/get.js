@@ -35,6 +35,7 @@ docClient.get(params, function (err, data) {
       JSON.stringify(err, null, 2)
     );
   } else {
-    console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+    console.log("GetItem succeeded!");
+    console.log(JSON.stringify(data, null, 2));
   }
 });
