@@ -1,8 +1,18 @@
 {
 	"folders": [
 		{
+			"name": "MiNS",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+        "recommendations": [
+			"mhutchie.git-graph",
+			"github.vscode-pull-request-github",
+			"eamodio.gitlens",
+			"esbenp.prettier-vscode",
+			"gruntfuggly.todo-tree"
+        ]
+    }
 }
