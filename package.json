@@ -6,7 +6,8 @@
     "react-dom": "17.0.0",
     "react-flow-renderer": "8.0.0",
     "react-scripts": "3.4.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "date-utils": "^1.2.21"
   },
   "scripts": {
     "start": "react-scripts start",

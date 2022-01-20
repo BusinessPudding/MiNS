@@ -10,25 +10,41 @@ AWS.config.update({
 });
 
 var docClient = new AWS.DynamoDB.DocumentClient();
+// 項目を更新する
+var table = "tweetdata";
+var username = "honahuku";
+
+// 現在時間を取得する
+// https://qiita.com/n0bisuke/items/dd28122d006c95c58f9c
+require("date-utils");
+var dt = new Date();
+var formatted = dt.toFormat("YYYY/MM/DD HH24時MI分SS秒");
 
 var params = {
-  TableName: "userdata",
-  KeyConditionExpression: "#id = :data",
+  TableName: table,
+  Key: {
+    username: username,
+  },
   ExpressionAttributeNames: {
-    "#id": "id",
+    "#dt": "data",
+    "#us": "user",
   },
+  UpdateExpression: "set #dt.body = :b, #dt.#us = :u",
   ExpressionAttributeValues: {
-    ":data": "001",
+    ":b": "現在日時は " + formatted + " です",
+    ":u": "test_user2",
   },
+  ReturnValues: "UPDATED_NEW",
 };
-// 項目を更新する
-docClient.query(params, function (err, data) {
+
+console.log("Updating the item...");
+docClient.update(params, function (err, data) {
   if (err) {
-    console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
+    console.error(
+      "Unable to update item. Error JSON:",
+      JSON.stringify(err, null, 2)
+    );
   } else {
-    console.log("Query succeeded.");
-    data.Items.forEach(function (item) {
-      console.log(" -", item.id + ": " + item.data);
-    });
+    console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
   }
 });
