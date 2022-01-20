@@ -1,5 +1,5 @@
 var data =  {
-    data2: [
+    data: [
       {
       id: '1484156307473063945',
       text: '金誠舘\n 住所 新潟県南魚沼市坂戸\n温泉旅館、割ぽう旅館、観光旅館、結婚式場、ビジネス旅館、ホテル、リゾート旅館、旅館'
@@ -39,22 +39,11 @@ var data =  {
   }
 }
 
-// function getValue(obj) {
-//     if (typeof obj === 'object') {
-//         var strValue = ' ';
-//         for (key in obj) {
-//             strValue += getValue(obj[key]);
-//         }
-//         return strValue;
-//     } else {
-//         return obj;
-//     }
-// }
+
 
 // 出力結果
-const obj = JSON.stringify(data);
-for(var item in data){
-        console.log(data.data2[1].text);
+for(let i  = 0; i < 10; i++){
+        console.log(data.data[i].text + '\n');
 }
 
 
