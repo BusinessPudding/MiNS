@@ -1,0 +1,11 @@
+{
+	"id": "1",
+	"type": "input",
+	"data": {
+		"label": "initial node"
+	},
+	"position": {
+		"x": "100",
+		"y": "0"
+	}
+}

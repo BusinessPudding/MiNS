@@ -2,11 +2,14 @@ import React, { useCallback, useState } from "react";
 import "./styles.css";
 
 import ReactFlow from "react-flow-renderer";
+
+const fs = require("fs");
+const json = require("./NodeDate.json");
 const initialElements = [
   {
     id: "1",
     type: "input", // input node
-    data: { label: "initial node" },
+    data: { label: "item" },
     position: { x: 100, y: 0 },
   },
 ];
