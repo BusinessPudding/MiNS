@@ -43,17 +43,39 @@ async function getRequest() {
         // Make request
         const response = await getRequest();
         
-        console.dir(response, {
-            
-            depth: null
-        });
+        
+        
+        // for(let i  = 0; i < 10; i++){
+        //     console.log(response.data[i].text + '\n');
+        // }
+        console.log(response.data[0].text + '\n');
+
+        var fs = require('fs');
+        var masterData = [];
+        var data = {
+            body: '現在時刻', 
+            tweet: response.data[0].text + '\n',
+            user: 'test_user2',
+    
+};
+
+var item = {
+    category: 'test',
+    username: 'honahuku',
+    data: data,
+    userid: 'userid'
+};
+
+
+masterData.push(item)
+
+let masterData2= JSON.stringify({Item: masterData}, null, ' ')
+
+fs.writeFileSync('output.json', masterData2);
 
     } catch (e) {
-        // console.log(e);
-	const str2 = JSON.stringify(e);
-	console.log(str2)
-        process.exit(-1);
-        ;
+        console.log(e);
+	    process.exit(-1);
     }
     process.exit();
 })();
