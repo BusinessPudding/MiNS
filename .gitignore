@@ -1,6 +1,3 @@
 node_modules/
-<<<<<<< HEAD
 .env
-=======
 src/twitter/.env
->>>>>>> main
