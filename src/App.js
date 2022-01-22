@@ -11,6 +11,12 @@ const initialElements = [
     data: { label: json.data.label },
     position: { x: json.position.x, y: json.position.y },
   },
+  {
+    id: json.id,
+    type: json.type, // input node
+    data: { label: json.data.label },
+    position: { x: 10, y: 10 },
+  },
 ];
 
 export default function App() {
