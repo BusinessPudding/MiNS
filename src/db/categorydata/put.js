@@ -31,6 +31,7 @@ var params = {
   Item: {
     id: uuid,
     category: "箱根",
+    // 親カテゴリを指定。最上位カテゴリの場合は"None"を指定
     parent: "",
     element: "N",
   },
