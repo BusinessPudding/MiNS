@@ -7,7 +7,7 @@ var AWS = require("aws-sdk");
 var { v4: uuidv4 } = require("uuid");
 
 // credentialファイルの読み込み
-AWS.config.loadFromPath("./credentials.json");
+AWS.config.loadFromPath("../credentials.json");
 
 // 読み込んだcredentialファイルの内容からこのプログラム用のプロファイルを設定
 AWS.config.update({
