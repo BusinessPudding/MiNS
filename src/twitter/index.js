@@ -19,7 +19,7 @@ async function getRequest() {
     // by default, only the Tweet ID and text fields are returned
     
     const params = {
-        'query': "箱根 -is:retweet OR 温泉 -is:retweet OR 旅館 -is:retweet"
+        'query': "箱根 -is:retweet -is:reply OR 温泉 -is:retweet -is:reply OR 旅館 -is:retweet -is:reply"
         
     }
 
