@@ -7,7 +7,7 @@ var AWS = require("aws-sdk");
 var { v4: uuidv4 } = require("uuid");
 
 // credentialファイルの読み込み
-AWS.config.loadFromPath("/root/.aws/credentials.json");
+AWS.config.loadFromPath("../credentials.json");
 
 // 読み込んだcredentialファイルの内容からこのプログラム用のプロファイルを設定
 AWS.config.update({
@@ -20,22 +20,35 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 // パラメーター用変数設定
 var table = "tweetdata";
 var username = "honahuku";
-var userid = uuidv4();
+var uuid = uuidv4();
 var category = "test";
 
-console.log("userid = ", userid);
+console.log("userid = ", uuid);
 
 //パラメーターの設定
 var params = {
   TableName: table,
   Item: {
     username: username,
-    userid: userid,
-    category: category,
-    data: {
-      user: "test_user1",
-      body: "test_post",
-    },
+    userid: uuid,
+    initialElements: [
+      {
+        user: "createdAt",
+        body: "N",
+      },
+      {
+        user: "createdAt",
+        body: "N",
+      },
+      {
+        user: "createdAt",
+        body: "N",
+      },
+      {
+        user: "createdAt",
+        body: "N",
+      },
+    ],
   },
 };
 
