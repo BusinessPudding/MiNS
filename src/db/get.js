@@ -5,7 +5,7 @@
 var AWS = require("aws-sdk");
 
 // credentialファイルの読み込み
-AWS.config.loadFromPath("/root/.aws/credentials.json");
+AWS.config.loadFromPath("./credentials.json");
 
 // 読み込んだcredentialファイルの内容からこのプログラム用のプロファイルを設定
 AWS.config.update({
