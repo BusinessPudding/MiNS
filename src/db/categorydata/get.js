@@ -16,14 +16,14 @@ AWS.config.update({
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 // パラメーター用変数設定
-var table = "tweetdata";
-var username = "honahuku";
+var table = "categorydata";
+var ctg = "箱根";
 
 //パラメーターを設定する。プライマリキーは必ず設定。必要ないキーは設定しない
 var params = {
   TableName: table,
   Key: {
-    username: username,
+    category: ctg,
   },
 };
 
