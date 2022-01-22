@@ -1,3 +1,4 @@
 node_modules/
 .env
 src/twitter/.env
+src/db/credentials.json
