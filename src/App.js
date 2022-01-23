@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import "./styles.css";
 import ReactFlow, { MiniMap } from "react-flow-renderer";
 const json = require("./NodeDate.json");
+// 以下をコメントアウトすると動作する
 const export_function = require("./gettweet.js");
 const initialElements = [
   {
@@ -43,7 +44,7 @@ export default function App() {
         {
           id: body,
           position: { x: Math.random() * 1500, y: Math.random() * 500 },
-          data: { label: tweet },
+          data: { label: tweet }, // labelに"hoge"のように普通の文字列を渡すと動作する
         },
       ];
     });
