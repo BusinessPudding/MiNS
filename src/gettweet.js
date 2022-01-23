@@ -1,7 +1,8 @@
-export const export_print = function () {
-  console.log("gettweet is run !");
-  require("dotenv").config();
-  const needle = require("needle");
+import dotenv from "dotenv";
+import needle from "needle";
+console.log("gettweet is run !");
+export const export_print = () => {
+  dotenv.config();
 
   const token = process.env.BEARER_TOKEN;
   const endpointUrl = "https://api.twitter.com/2/tweets/search/recent";
@@ -23,7 +24,7 @@ export const export_print = function () {
       throw new Error("Unsuccessful request");
     }
   }
-  console.log("gettweet is run !");
+
   (async () => {
     try {
       // Make request

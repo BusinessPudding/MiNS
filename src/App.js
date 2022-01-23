@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from "react";
 import "./styles.css";
 import ReactFlow, { MiniMap } from "react-flow-renderer";
+import { export_print } from "./gettweet";
 const json = require("./NodeDate.json");
 // 以下をコメントアウトすると動作する
-import { export_function } from "./gettweet";
 const initialElements = [
   {
     id: 1,
@@ -35,16 +35,16 @@ const initialElements = [
 
 export default function App() {
   const [els, setEls] = useState(initialElements);
-  const addNode = useCallback(() => {
+  const addNode = useCallback(async () => {
     let body = Math.random() * 1500;
-    let tweet = export_function.export_print();
+    // let tweet = await export_print();
     setEls((els) => {
       return [
         ...els,
         {
           id: body,
           position: { x: Math.random() * 1500, y: Math.random() * 500 },
-          data: { label: tweet }, // labelに"hoge"のように普通の文字列を渡すと動作する
+          data: { label: "tweet" }, // labelに"hoge"のように普通の文字列を渡すと動作する
         },
       ];
     });
