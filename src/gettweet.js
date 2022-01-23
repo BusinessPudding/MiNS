@@ -1,4 +1,5 @@
-exports.export_print = () => {
+export const export_print = function () {
+  console.log("gettweet is run !");
   require("dotenv").config();
   const needle = require("needle");
 

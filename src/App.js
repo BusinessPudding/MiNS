@@ -3,7 +3,7 @@ import "./styles.css";
 import ReactFlow, { MiniMap } from "react-flow-renderer";
 const json = require("./NodeDate.json");
 // 以下をコメントアウトすると動作する
-const export_function = require("./gettweet.js");
+import { export_function } from "./gettweet";
 const initialElements = [
   {
     id: 1,
