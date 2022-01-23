@@ -22,7 +22,7 @@ exports.export_print = () => {
       throw new Error("Unsuccessful request");
     }
   }
-
+  console.log("gettweet is run !");
   (async () => {
     try {
       // Make request
