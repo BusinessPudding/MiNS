@@ -1,37 +1,49 @@
 import React, { useCallback, useState } from "react";
 import "./styles.css";
-
 import ReactFlow, { MiniMap } from "react-flow-renderer";
-
 const json = require("./NodeDate.json");
+const export_function = require("./gettweet.js");
 const initialElements = [
   {
-    id: json.id,
+    id: 1,
     type: json.type, // input node
-    data: { label: json.data.label },
-    position: { x: json.position.x, y: json.position.y },
+    data: { label: "旅行" },
+    position: { x: 100, y: 100 },
   },
   {
-    id: json.id,
+    id: 2,
     type: json.type, // input node
-    data: {
-      label: json.data.label,
-    },
-    position: { x: 10, y: 10 },
+    data: { label: "日本" },
+    position: { x: 300, y: 100 },
   },
+  {
+    id: 4,
+    type: json.type, // input node
+    data: { label: "箱根" },
+    position: { x: 500, y: 100 },
+  },
+  // {
+  //   id: Math.random(),
+  //   type: json.type, // input node
+  //   data: {
+  //     label: json.data.label,
+  //   },
+  //   position: { x: 10, y: 10 },
+  // },
 ];
 
 export default function App() {
   const [els, setEls] = useState(initialElements);
   const addNode = useCallback(() => {
     let body = Math.random() * 1500;
+    let tweet = export_function.export_print();
     setEls((els) => {
       return [
         ...els,
         {
           id: body,
           position: { x: Math.random() * 1500, y: Math.random() * 500 },
-          data: { label: json.data.label },
+          data: { label: tweet },
         },
       ];
     });
